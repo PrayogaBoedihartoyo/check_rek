@@ -5,6 +5,7 @@ const date = moment.tz(Date.now(), timeZone);
 
 const mySchema = new mongoose.Schema({
     name: String,
+    no_rekening: String,
     bank: String,
     result: String,
 
