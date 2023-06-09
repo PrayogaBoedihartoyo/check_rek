@@ -23,7 +23,7 @@ const mySchema = new mongoose.Schema({
         myspace: Boolean,
         pinterest: Boolean,
         skype: Boolean,
-        sportify: Boolean,
+        spotify: Boolean,
         tumblr: Boolean,
         vimeo: Boolean,
         weibo: Boolean,
