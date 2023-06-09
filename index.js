@@ -1,6 +1,7 @@
 const express = require('express');
 const check_rekening = require('./database/model/check_rekening');
 const seon_phone = require('./database/model/seon_phone');
+const seon_email = require('./database/model/seon_email');
 require('./database/index');
 const index = express();
 const port = 3000;
@@ -42,7 +43,7 @@ index.post('/api/data/seon-phone', async (req, res) => {
 index.post('/api/data/seon-email', async (req, res) => {
     try {
         const data = req.body
-        const log = new seon_phone(data)
+        const log = new seon_email(data)
         await log.save()
 
         return res.status(200).json({
