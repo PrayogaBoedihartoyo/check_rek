@@ -1,5 +1,6 @@
 const express = require('express');
-const MyModel = require('./database/model/check_rekening');
+const check_rekening = require('./database/model/check_rekening');
+const seon_phone = require('./database/model/seon_phone');
 require('./database/index');
 const index = express();
 const port = 3000;
@@ -7,7 +8,7 @@ const port = 3000;
 index.use(express.json());
 index.post('/api/data', async (req, res) => {
     const data = req.body
-    const log = new MyModel(data)
+    const log = new check_rekening(data)
     log.save()
 
     return res.status(200).json({
@@ -16,8 +17,25 @@ index.post('/api/data', async (req, res) => {
 });
 
 index.get('/api/data', async (req, res) => {
-    const allinfo = await MyModel.find({deletedAt: null})
+    const allinfo = await check_rekening.find({deletedAt: null})
     res.status(200).json(allinfo);
+});
+
+index.post('/api/data/seon_phone', async (req, res) => {
+   try {
+        const data = req.body
+        const log = new seon_phone(data)
+        log.save()
+
+        return res.status(200).json({
+             message: "Data added successfully",
+        })
+   }  catch (err) {
+         res.status(400).json({
+              status: "failed",
+             message: err.message
+         });
+   }
 });
 
 index.listen(port, () => {
