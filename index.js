@@ -21,14 +21,15 @@ index.get('/api/data', async (req, res) => {
     res.status(200).json(allinfo);
 });
 
-index.post('/api/data/seon_phone', async (req, res) => {
+index.post('/api/data/seon-phone', async (req, res) => {
    try {
         const data = req.body
         const log = new seon_phone(data)
-        log.save()
+        await log.save()
 
         return res.status(200).json({
-             message: "Data added successfully",
+            message: "Data added successfully",
+            data: data
         })
    }  catch (err) {
          res.status(400).json({
