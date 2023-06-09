@@ -5,9 +5,8 @@ const date = moment.tz(Date.now(), timeZone);
 
 const mySchema = new mongoose.Schema({
     number: String,
-    valid: String,
+    valid: Boolean,
     score: Number,
-    no_rekening: String,
     account_details: {
         facebook: Boolean,
         google: Boolean,
