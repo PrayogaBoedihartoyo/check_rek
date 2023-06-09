@@ -39,6 +39,24 @@ index.post('/api/data/seon-phone', async (req, res) => {
    }
 });
 
+index.post('/api/data/seon-email', async (req, res) => {
+    try {
+        const data = req.body
+        const log = new seon_phone(data)
+        await log.save()
+
+        return res.status(200).json({
+            message: "Data added successfully",
+            data: data
+        })
+    }  catch (err) {
+        res.status(400).json({
+            status: "failed",
+            message: err.message
+        });
+    }
+});
+
 index.listen(port, () => {
     console.log(`Server berjalan di http://localhost:${port}`);
 });

@@ -6,7 +6,7 @@ const date = moment.tz(Date.now(), timeZone);
 const mySchema = new mongoose.Schema({
     email: String,
     score: Number,
-    deliverable: String,
+    deliverable: Boolean,
     account_details: {
         apple: Boolean,
         ebay: Boolean,
