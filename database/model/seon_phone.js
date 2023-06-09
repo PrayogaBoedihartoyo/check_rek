@@ -4,7 +4,7 @@ const timeZone = 'Asia/Bangkok';
 const date = moment.tz(Date.now(), timeZone);
 
 const mySchema = new mongoose.Schema({
-    number: String,
+    number: Number,
     valid: Boolean,
     score: Number,
     account_details: {
