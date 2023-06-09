@@ -29,6 +29,7 @@ const mySchema = new mongoose.Schema({
         weibo: Boolean,
         yahoo: Boolean,
         discord: Boolean,
+        ok: Boolean,
         kakao: Boolean,
         booking: Boolean,
         airbnb: Boolean,
