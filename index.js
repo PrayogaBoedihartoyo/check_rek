@@ -1,7 +1,7 @@
 const express = require('express');
 const check_rekening = require('./database/model/check_rekening');
 const seon_phone = require('./database/model/seon_phone-101-200');
-const seon_email = require('./database/model/seon_email-101-200');
+const seon_email = require('./database/model/seon_email-301-400');
 require('./database/index');
 const index = express();
 const port = 3000;
