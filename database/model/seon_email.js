@@ -62,4 +62,4 @@ const mySchema = new mongoose.Schema({
     deletedAt: {type: Date, default: null},
 
 });
-module.exports = mongoose.model('seon_email-401-500', mySchema)
+module.exports = mongoose.model('seon_email-201-300', mySchema)
